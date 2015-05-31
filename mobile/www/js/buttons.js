@@ -2,7 +2,7 @@ var buttons = {
   "categories":[
   {
     "id": 0,
-    "name":"classic",
+    "name":"Clássicos",
     "items":[
       {
         "title":"vuvuzela",
@@ -208,7 +208,7 @@ var buttons = {
   },
   {
     "id": 1,
-    "name":"tv",
+    "name":"TV e Cinema",
     "items":[
       {
         "title":"risada carlos alberto",
@@ -424,7 +424,7 @@ var buttons = {
   },
   {
     "id": 2,
-    "name":"internet",
+    "name":"Internet e YouTube",
     "items":[
       {
         "title":"que delicia cara",
@@ -588,7 +588,7 @@ var buttons = {
   },
   {
     "id": 3,
-    "name":"sport",
+    "name":"Esportes",
     "items":[
       {
         "title":"acabooou é tetra",
@@ -614,7 +614,7 @@ var buttons = {
   },
   {
     "id": 4,
-    "name":"game",
+    "name":"Games",
     "items":[
       {
         "title":"fus ro dah",
@@ -700,7 +700,7 @@ var buttons = {
   },
   {
     "id": 5,
-    "name":"music",
+    "name":"Música",
     "items":[
       {
         "title":"smoke weed everyday",

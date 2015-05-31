@@ -19,9 +19,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
 })
+.config(function($ionicConfigProvider) {
 
+
+  // note that you can also chain configs
+  $ionicConfigProvider.backButton.text('Voltar').icon('ion-chevron-left').previousTitleText(false);
+})
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+
 
   .state('app', {
     url: "/app",
@@ -30,14 +36,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html"
-      }
-    }
-  })
+    .state('home', {
+      url: "/search",
+      templateUrl: "templates/search.html"
+
+    })
 
   .state('app.browse', {
     url: "/browse",

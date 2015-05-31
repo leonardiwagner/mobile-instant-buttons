@@ -1,1 +1,21 @@
-/* Empty. Add your own CSS if you like */
+.scroll{height: 100%;}
+
+h2{
+    font-weight: bold !important;
+
+}
+.ion-heart{
+    color: red;
+}
+
+.item-text-wrap {
+    font-size: 0.8em;
+    text-align: justify !important;
+
+}
+
+
+
+.item-text-wrap .button{
+    line-height: 1em !important;
+}

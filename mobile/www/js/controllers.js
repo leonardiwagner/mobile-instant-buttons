@@ -39,9 +39,12 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
     var categoryId = $stateParams.categoryId;
-    $scope.soundButtons = buttons.categories.filter(function(category){
+    var categoryObject = buttons.categories.filter(function(category){
       return category.id == categoryId;
-    })[0].items;
+    })[0];
+
+    $scope.categoryName = categoryObject.name;
+    $scope.soundButtons = categoryObject.items;
 
 
 
@@ -67,7 +70,7 @@ angular.module('starter.controllers', [])
           button.status = "unavaiable";
         }
       });
-      playingButton.status = "playing ion-stop";;
+      playingButton.status = "playing";
     }
 
     function setAllButtonsNormalAgain(){
