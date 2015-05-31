@@ -1,0 +1,35 @@
+<style>
+  .sound-button-large{
+    width:50%;
+    height:60px;
+  }
+  .sound-button-medium{
+    width:33%;
+    height:40px;
+  }
+  .sound-button-small{
+    width:25%;
+    height:50px;
+
+    line-height: 1em;
+
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    text-shadow: 2px 0 0 rgba(255,255,255,0.5), -2px 0 0 rgba(255,255,255,0.5), 0 2px 0 rgba(255,255,255,0.5), 0 -2px 0 rgba(255,255,255,0.5), 1px 1px rgba(255,255,255,0.5), -1px -1px 0 rgba(255,255,255,0.5), 1px -1px 0 rgba(255,255,255,0.5), -1px 1px 0 rgba(255,255,255,0.5);
+  }
+
+  .unavaiable{
+    color: red;
+  }
+</style>
+<ion-view view-title="Playlist">
+  <ion-content>
+    <button ng-repeat="soundButton in soundButtons" class="button icon sound-button-small" style="background-image:url('/img/{{soundButton.image}}');" ng-click="playSound()" ng-class="soundButton.status">
+      <span ng-show="!soundButton.status || soundButton.status.indexOf('playing') === -1">{{soundButton.title}}</span>
+    </button>
+
+  </ion-content>
+</ion-view>
+s

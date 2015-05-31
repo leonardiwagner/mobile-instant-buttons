@@ -1,6 +1,7 @@
-{
+var buttons = {
   "categories":[
     {
+      "id": 0,
       "name":"classic",
       "items":[
         {
@@ -206,6 +207,7 @@
       ]
     },
     {
+      "id": 1,
       "name":"tv",
       "items":[
         {
@@ -421,6 +423,7 @@
       ]
     },
     {
+      "id": 2,
       "name":"internet",
       "items":[
         {
@@ -431,15 +434,18 @@
         {
           "title":"trololo",
           "url":"trollolol.swf.mp3",
+          "image": "trololo.jpg",
           "onlyInBrazil":false
         },
         {
           "title":"nigga nigga nigga",
+          "image": "nigga.jpg",
           "url":"youtube-poop-gary-nigga-nigga-nigga-mp3cut.mp3",
           "onlyInBrazil":false
         },
         {
           "title":"nobody got time fo dat",
+          "image": "nobody.jpg",
           "url":"aint-nobody-got-time-for-that_1.mp3",
           "onlyInBrazil":false
         },
@@ -449,17 +455,20 @@
           "onlyInBrazil":true
         },
         {
-          "title":"qual eh o negocio",
+          "title":"qual é o negocio",
+          "image": "frota.jpg",
           "url":"eae-frota-qual-e-o-negocio.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"you are a pirate",
+          "image": "pirate.gif",
           "url":"do-what-you-want-cause-a-pirate-is-free-you-are-a-pirate.mp3",
           "onlyInBrazil":false
         },
         {
           "title":"hue br",
+          "image": "hue.jpg",
           "url":"sequence-01_2_1.mp3",
           "onlyInBrazil":true
         },
@@ -470,36 +479,43 @@
         },
         {
           "title":"va a merda",
+          "image": "vaamerda.jpg",
           "url":"vaamerda_1.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"quero q vc se foda",
+          "image": "morre.jpg",
           "url":"queroquevcsefoda.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"para nossa alegria",
+          "image": "alegria.jpg",
           "url":"para-nossa-alegria-_cut.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"sai da frente satanas",
+          "image": "saidafrente.jpg",
           "url":"sai_da_frente_satangs_mp3cut.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"estou sentindo treta",
+          "image": "treta.jpg",
           "url":"eu-estou-sentindo-uma-treta-super-lask-original-wwwmusicaparadownloadscom.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"vem monstro",
+          "image": "vemmonstro.jpg",
           "url":"vem-monstro.mp3",
           "onlyInBrazil":true
         },
         {
           "title":"foda-se opera",
+          "image": "fodaseopera.jpg",
           "url":"foda-se_2.mp3",
           "onlyInBrazil":true
         },
@@ -571,6 +587,7 @@
       ]
     },
     {
+      "id": 3,
       "name":"sport",
       "items":[
         {
@@ -596,6 +613,7 @@
       ]
     },
     {
+      "id": 4,
       "name":"game",
       "items":[
         {
@@ -681,6 +699,7 @@
       ]
     },
     {
+      "id": 5,
       "name":"music",
       "items":[
         {
@@ -846,4 +865,33 @@
       ]
     }
   ]
-}
+};
+
+var source = "http://www.myinstants.com/media/sounds/";
+
+var http = require('http');
+var fs = require('fs');
+
+console.log("initializing");
+
+buttons.categories.forEach(function(category){
+
+  category.items.forEach(function(sound){
+    console.log("> donwloading " + sound.url);
+
+    var file = fs.createWriteStream(sound.url);
+    var request = http.get(source + sound.url, function(response) {
+      response.pipe(file);
+      file.on('finish', function() {
+
+        console.log("> donwloaded " + sound.url);
+      });
+    });
+  });
+});
+
+
+console.log("finished");
+
+
+
